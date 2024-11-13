@@ -53,11 +53,16 @@ taskForm.addEventListener("submit", async (e) => {
   }
 });
 
+
 // Handle task completion and deletion
 taskList.addEventListener("click", async (e) => {
+
+  let li = e.target.closest("li");
+  let taskId;
+  taskId = li.dataset.id;
+  
   if (e.target.classList.contains("complete-btn")) {
-    const li = e.target.closest("li");
-    const taskId = li.dataset.id;
+
     const isCompleted = li.classList.contains("completed");
 
     try {
@@ -75,21 +80,22 @@ taskList.addEventListener("click", async (e) => {
     }
   }
 
-  if (e.target.classList.contains("delete-btn")) {
-    const li = e.target.closest("li");
-    const taskId = li.dataset.id;
+if (e.target.classList.contains("delete-btn")) {
+    
 
-    try {
-      const response = await fetch(`http://localhost:3000/tasks/delete/${taskId}`, {
-        method: "DELETE"
-      });
-      if (!response.ok) throw new Error("Failed to delete task");
-      
-      li.remove();
-    } catch (error) {
-      console.error("Error:", error);
-    }
+  console.log(li.dataset);
+  
+  try {
+    const response = await fetch(`http://localhost:3000/tasks/delete/${taskId}`, {
+      method: "DELETE"
+    });
+    if (!response.ok) throw new Error("Failed to delete task");
+
+    li.remove();
+  } catch (error) {
+    console.error("Error:", error);
   }
+}
 });
 
 // Initial fetch of tasks
