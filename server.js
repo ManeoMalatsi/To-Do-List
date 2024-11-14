@@ -10,7 +10,8 @@ app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(express.static("public")); // Serve static files from 'public' folder
 
 // In-memory data structure to store tasks
-let tasks = [{ id: uuidv4(), title: "Sample Task", completed: false }];
+ let tasks = [{ id: uuidv4(), title: "Sample Task", completed: false }];
+
 
 // Route to get all tasks
 app.get("/tasks", (req, res) => {
@@ -44,7 +45,6 @@ app.post("/create-task", (req, res) => {
 app.put("/tasks/completed/:id", (request, response) => {
   const { id } = request.params;  // Extract the task ID from URL parameters
   const taskIndex = tasks.findIndex((task) => task.id === id);  // Find index of the task
-
   if (taskIndex !== -1) {
     // If task is found, mark it as completed
     tasks[taskIndex].completed = true;  // Assuming the task has a `completed` property

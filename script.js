@@ -62,17 +62,15 @@ taskList.addEventListener("click", async (e) => {
   taskId = li.dataset.id;
   
   if (e.target.classList.contains("complete-btn")) {
-
-    const isCompleted = li.classList.contains("completed");
-
+     const isCompleted = li.classList.contains("completed");
+     console.log(li.dataset);
     try {
-      const response = await fetch(`http://localhost:3000/tasks/${taskId}`, {
+      const response = await fetch(`http://localhost:3000/tasks/completed/${taskId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ completed: !isCompleted })
       });
       if (!response.ok) throw new Error("Failed to update task");
-      
       li.classList.toggle("completed");
       e.target.textContent = isCompleted ? "Complete" : "Undo";
     } catch (error) {
@@ -81,10 +79,7 @@ taskList.addEventListener("click", async (e) => {
   }
 
 if (e.target.classList.contains("delete-btn")) {
-    
-
   console.log(li.dataset);
-  
   try {
     const response = await fetch(`http://localhost:3000/tasks/delete/${taskId}`, {
       method: "DELETE"
