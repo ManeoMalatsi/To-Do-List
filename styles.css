@@ -1,3 +1,5 @@
+/* Import a cursive font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -112,3 +114,15 @@ button.delete-btn {
 button.delete-btn:hover {
   color: #cc3c3c;
 }
+
+
+
+.cursive-text {
+  font-family: 'Italianno', cursive; /* Makes the text cursive */
+  font-weight: bold;                 /* Makes the text bold */
+  text-align: center;                /* Center-aligns the text */
+  display: flex;
+  justify-content: center;
+  font-size: 2em;                    /* Adjust the font size as desired */
+}
+
