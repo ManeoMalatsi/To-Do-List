@@ -1,12 +1,14 @@
 /* Import a cursive font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f2f5;
+  background: #e8ebee;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -119,10 +121,10 @@ button.delete-btn:hover {
 
 .cursive-text {
   font-family: 'Italianno', cursive; /* Makes the text cursive */
-  font-weight: bold;                 /* Makes the text bold */
-  text-align: center;                /* Center-aligns the text */
+  font-weight: bold;                 
+  text-align: center;                
   display: flex;
   justify-content: center;
-  font-size: 2em;                    /* Adjust the font size as desired */
+  font-size: 2em;                    
 }
 

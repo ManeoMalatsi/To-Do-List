@@ -45,6 +45,7 @@ app.post("/create-task", (req, res) => {
 app.put("/tasks/completed/:id", (request, response) => {
   const { id } = request.params;  // Extract the task ID from URL parameters
   const taskIndex = tasks.findIndex((task) => task.id === id);  // Find index of the task
+
   if (taskIndex !== -1) {
     // If task is found, mark it as completed
     tasks[taskIndex].completed = true;  // Assuming the task has a `completed` property
