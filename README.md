@@ -1,7 +1,7 @@
 # Maneo Malatsi's To-Do-List Web Application
 A simple and functional to-do list application where users can add tasks, mark them as completed, and delete them. It also includes a section displaying only uncompleted tasks.
-# Live Demo Link
-https://silky-glittery-firewall.glitch.me/
+# Live Deployment Link
+[https://silky-glittery-firewall.glitch.me/](https://to-do-list-44cw0qucs-maneomalatsis-projects.vercel.app/)
 
 # todo-list
 ── index.html        # HTML file for the structure of the app
